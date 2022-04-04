@@ -54,4 +54,27 @@ where district_id < 10
 group by district_id
 order by district_id asc
 --14
-select type, count ( from card
+select * from card
+select type, count(card_id) from card
+group by type
+--15
+select * from loan
+select account_id, sum(amount) from loan
+group by account_id
+order by sum(amount) desc
+limit 10
+--16
+select date, count(loan_id) from loan
+where date < 930907
+group by date
+order by date desc
+--17
+select date, duration, count(loan_id) from loan
+where date between 971201 and 971231
+group by date,duration
+order by date, duration
+--18
+select * from trans
+select account_id, type,sum(amount) as total_amount from trans
+where account_id = 396
+group by operation
