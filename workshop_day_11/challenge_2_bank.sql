@@ -33,6 +33,7 @@ order by amount asc
 limit 5
 --8
 select distinct k_symbol from `order`
+where k_symbol<>""
 order by k_symbol asc
 --9
 select order_id from `order`
@@ -78,3 +79,4 @@ select * from trans
 select account_id, type,sum(amount) as total_amount from trans
 where account_id = 396
 group by operation
+select * from bank.account as acc inner join bank.loan as ln using (account_id)
