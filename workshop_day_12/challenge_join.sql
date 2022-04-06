@@ -46,3 +46,4 @@ inner join customer
 using (customer_id)
 group by customer_id
 order by last_name asc
+
