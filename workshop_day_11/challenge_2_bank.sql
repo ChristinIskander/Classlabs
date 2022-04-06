@@ -80,3 +80,6 @@ select account_id, type,sum(amount) as total_amount from trans
 where account_id = 396
 group by operation
 select * from bank.account as acc inner join bank.loan as ln using (account_id)
+
+select account_id, amount from bank.loan
+where amount > (select avg(amount) from bank.loan)
