@@ -24,8 +24,7 @@ where actor_id in (select actor_id from film_actor
 where film_id in (select film_id from film
 where title = "Alone Trip"))
 
-# 4 Sales have been lagging among young families, and you wish to target all family movies for a promotion. 
-# Identify all movies categorized as family films.
+# 4 Identify all movies categorized as family films.
 select title from film
 where  film_id in (select film_id from film_category
 where category_id in (select category_id from category
